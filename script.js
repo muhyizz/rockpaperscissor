@@ -85,5 +85,23 @@ function game(playerInput){
     document.querySelector('.win').innerText =  playerWin;
     document.querySelector('.lose').innerText =  cpuWin;
     document.querySelector('.draw').innerText =  draw;
-    document.querySelector('.mainText').innerText = result;
+    
+
+    if (playerWin >= 5){
+        document.querySelector('.mainText').innerText = 'You Won The Game!';
+        document.querySelector('.round').innerText =  '5';
+        document.querySelector('.win').innerText =  'Win';
+        document.querySelector('.lose').innerText =  '';
+        document.querySelector('.draw').innerText =  '';
+    } else if (cpuWin >= 5){
+        document.querySelector('.mainText').innerText = 'You Lost The Game!';
+        document.querySelector('.round').innerText =  '5';
+        document.querySelector('.win').innerText =  '';
+        document.querySelector('.lose').innerText =  'Lost';
+        document.querySelector('.draw').innerText =  '';
+    } else {
+        document.querySelector('.mainText').innerText = result;
+    }
+
+    
 }
