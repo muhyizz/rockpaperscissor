@@ -1,8 +1,33 @@
-//set a two variable 1 - user 2 - cpu
-//compare the input and return
-//get the input
-
+// Variables
 var counter = 0;
+let playerWin = 0;
+let cpuWin = 0;
+let draw = 0;
+let error = 0;
+
+//Event Listener
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all the buttons for Rock, Paper, and Scissors
+    const rockButton = document.querySelector('.rock');
+    const paperButton = document.querySelector('.paper');
+    const scissorButton = document.querySelector('.scissor');
+  
+    // Add event listeners to the buttons
+    rockButton.addEventListener('click', function () {
+      game('Rock'); // Call the game function with the player's choice as 'Rock'
+    });
+  
+    paperButton.addEventListener('click', function () {
+      game('Paper'); // Call the game function with the player's choice as 'Paper'
+    });
+  
+    scissorButton.addEventListener('click', function () {
+      game('Scissor'); // Call the game function with the player's choice as 'Scissor'
+    });
+  });
+
+
+//Game Function
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -40,43 +65,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-function normalizeInput(input){
-    word = input;
-    word_lowerall = word.toLowerCase();
-    word_lowerall_first_removed = word_lowerall.slice(1, word_lowerall.length);
-    word_first_letter_uppercase =  word_lowerall.charAt(0).toUpperCase();
-    word_fixed = word_first_letter_uppercase +   word_lowerall_first_removed;
-    return word_fixed;
-}
-
 function game(playerInput){
-    let playerWin = 0;
-    let cpuWin = 0;
-    let draw = 0;
-    let error = 0;
-    let playerSelection = playerInput;
-
-    while (true){
-        const computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        console.log(result)
-        if (result == 'You win'){
-            playerWin++;
-        } else if (result == 'Its a draw'){
-            draw++;
-        } else if (result == 'Error'){
-            error++;
-        }else{
-            cpuWin++
-        }
-
-        counter++;
-        document.querySelector('.round').innerHTML =  counter;
+    
+    const playerSelection = playerInput;
+    const computerSelection = getComputerChoice();
+    let result = playRound(playerSelection, computerSelection);
+    if (result == 'You win'){
+        playerWin++;
+    } else if (result == 'Its a draw'){
+        draw++;
+    } else if (result == 'Error'){
+        error++;
+    }else{
+        cpuWin++
     }
 
-    console.log('Player Win: ' + playerWin + ' Computer Win: ' + cpuWin + ' Draw: ' + draw + ' Error: ' + error);
+    counter++;
+    document.querySelector('.round').innerText =  counter;
+    document.querySelector('.win').innerText =  playerWin;
+    document.querySelector('.lose').innerText =  cpuWin;
+    document.querySelector('.draw').innerText =  draw;
+    document.querySelector('.mainText').innerText = result;
 }
-
-game(playerInput)
-
