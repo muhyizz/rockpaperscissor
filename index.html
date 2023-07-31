@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <header>RCP Games</header>
+        <div class="mainSection">
+            <div class="round">
+                <p>Round</p>
+            </div>
+            <div class="mainText">
+                <p>Text</p>
+            </div>
+            <div class="score">
+                <div class="win">Wins</div>
+                <div class="lose">lose</div>
+                <div class="draw">draw</div>
+            </div>
+        </div>
+        <div class="buttonSection">
+            <button class = "rock" type="button" onclick="game('Rock')"> Rock </button>
+            <button class = "paper" type="button"> Paper </button>
+            <button class = "scissor" type="button"> Scissor </button>
+        </div>
+    </div>
     
 </body>
 </html>
