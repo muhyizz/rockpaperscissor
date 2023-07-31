@@ -1,0 +1,59 @@
+*{
+    margin: 0 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mainSection{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.round{
+    padding: 300px 100px;
+}
+
+.mainText{
+    padding: 300px 100px;
+}
+
+.score{
+    display: flex;
+    justify-content: space-between;
+    padding: 300px 100px;
+    gap: 20px;
+}
+
+.buttonSection{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.rock{
+    padding: 5px 100px;
+}
+
+.paper{
+    padding: 5px 100px;
+}
+
+.scissor{
+    padding: 5px 100px;
+}
+
+
