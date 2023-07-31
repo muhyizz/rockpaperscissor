@@ -50,15 +50,14 @@ function normalizeInput(input){
     return word_fixed;
 }
 
-function game(){
+function game(playerInput){
     let playerWin = 0;
     let cpuWin = 0;
     let draw = 0;
     let error = 0;
+    let playerSelection = playerInput;
 
-    while (counter < 5){
-        let playerChoice = prompt('Rock, Paper or Scissor')
-        const playerSelection = normalizeInput(playerChoice);
+    while (true){
         const computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
@@ -73,9 +72,11 @@ function game(){
         }
 
         counter++;
+        document.querySelector('.round').innerHTML =  counter;
     }
 
     console.log('Player Win: ' + playerWin + ' Computer Win: ' + cpuWin + ' Draw: ' + draw + ' Error: ' + error);
 }
 
-game()
+game(playerInput)
+
